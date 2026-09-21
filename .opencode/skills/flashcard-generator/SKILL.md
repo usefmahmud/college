@@ -1,6 +1,6 @@
 ---
 name: flashcard-generator
-description: Generate spaced-repetition flashcards (Q/A pairs, Anki-importable CSV) from an existing lecture-NN-notes.md or sheet solutions. Use when the student asks for flashcards, wants to "drill" a lecture, or before Anki-style spaced-repetition review.
+description: Generate spaced-repetition flashcards (Q/A pairs, Anki-importable CSV) from an existing notes.md or sheet solutions. Use when the student asks for flashcards, wants to "drill" a lecture, or before Anki-style spaced-repetition review.
 license: MIT
 compatibility: opencode
 metadata:
@@ -23,8 +23,8 @@ in both a human-readable Markdown form and an Anki-CSV form.
 
 ## Output location & naming
 
-- `level-04/semester-01/<course>/lectures/lecture-NN-flashcards.md` — human-readable.
-- `level-04/semester-01/<course>/lectures/lecture-NN-flashcards.csv` — two columns,
+- `level-04/semester-01/<course>/lectures/lecture-NN/flashcards.md` — human-readable.
+- `level-04/semester-01/<course>/lectures/lecture-NN/flashcards.csv` — two columns,
   `front,back`, no header row, ready for Anki's "Basic" note type import.
 
 ## Card-writing rules

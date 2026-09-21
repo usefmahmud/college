@@ -34,13 +34,13 @@ snippet, you explain what every line does and why it's written that way.
 
 ## Output location & naming
 
-For `level-04/semester-01/<course>/lectures/lecture-NN.pdf`, write:
-`level-04/semester-01/<course>/lectures/lecture-NN-notes.md`
+For `level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.pdf`, write:
+`level-04/semester-01/<course>/lectures/lecture-NN/notes.md`
 
-For `level-04/semester-01/<course>/sheets/sheet-NN.pdf`, use the same template but title
+For `level-04/semester-01/<course>/sheets/sheet-NN/sheet-NN.pdf`, use the same template but title
 it "Sheet NN — Worked Solutions" and put every sub-question's full worked
 solution under "Full Detailed Explanation" instead of lecture topics; write to
-`level-04/semester-01/<course>/sheets/sheet-NN-solved.md`.
+`level-04/semester-01/<course>/sheets/sheet-NN/solved.md`.
 
 ## Template
 
@@ -48,7 +48,7 @@ solution under "Full Detailed Explanation" instead of lecture topics; write to
 ---
 course: <course display name>
 unit: lecture-NN | sheet-NN
-source: lecture-NN.pdf
+source: lecture-NN/lecture-NN.pdf
 generated: <date>
 ---
 

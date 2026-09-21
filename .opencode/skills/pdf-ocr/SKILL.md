@@ -24,11 +24,23 @@ hand-drawn figures) so those get transcribed by eye instead of guessed at.
 
 ## Procedure
 
+**0. Ensure the per-lecture folder exists and the PDF is inside it.**
+
+```bash
+mkdir -p "level-04/semester-01/<course>/lectures/lecture-NN"
+mv "level-04/semester-01/<course>/lectures/lecture-NN.pdf" \
+   "level-04/semester-01/<course>/lectures/lecture-NN/" 2>/dev/null || true
+```
+
+If the PDF is already inside `lectures/lecture-NN/`, the `mv` is a no-op.
+Sheets follow the same pattern: `sheets/sheet-NN/sheet-NN.pdf`.
+
 **1. Try direct text extraction first (fast, exact, no OCR errors).**
 
 ```bash
-pdftotext -layout "level-04/semester-01/<course>/lectures/lecture-03.pdf" "level-04/semester-01/<course>/lectures/lecture-03.raw.txt"
-wc -w "level-04/semester-01/<course>/lectures/lecture-03.raw.txt"
+pdftotext -layout "level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.pdf" \
+               "level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.raw.txt"
+wc -w "level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.raw.txt"
 ```
 
 `-layout` preserves column/table positioning, which matters for slides with
@@ -46,12 +58,12 @@ Red flags that mean you need OCR instead:
 **3. Fallback: rasterize pages, then OCR each page.**
 
 ```bash
-mkdir -p /tmp/ocr/lecture-03
-pdftoppm -r 300 -png "level-04/semester-01/<course>/lectures/lecture-03.pdf" /tmp/ocr/lecture-03/page
-for f in /tmp/ocr/lecture-03/page-*.png; do
+mkdir -p /tmp/ocr/lecture-NN
+pdftoppm -r 300 -png "level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.pdf" /tmp/ocr/lecture-NN/page
+for f in /tmp/ocr/lecture-NN/page-*.png; do
   tesseract "$f" "${f%.png}" --psm 6
 done
-cat /tmp/ocr/lecture-03/page-*.txt > "level-04/semester-01/<course>/lectures/lecture-03.raw.txt"
+cat /tmp/ocr/lecture-NN/page-*.txt > "level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.raw.txt"
 ```
 
 - `--psm 6` ("assume a uniform block of text") is a good default for slide
@@ -79,7 +91,7 @@ Read the `.raw.txt` file to produce structured notes via `lecture-notes-writer`,
 then **delete all temporary artifacts** once the notes file is written:
 
 ```bash
-rm -f "level-04/semester-01/<course>/lectures/lecture-NN.raw.txt"
+rm -f "level-04/semester-01/<course>/lectures/lecture-NN/lecture-NN.raw.txt"
 rm -rf /tmp/ocr/lecture-NN
 ```
 

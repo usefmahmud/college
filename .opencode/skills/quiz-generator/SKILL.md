@@ -1,6 +1,6 @@
 ---
 name: quiz-generator
-description: Generate a practice quiz (mixed multiple-choice and short-answer/problem questions, with a full answer key) from an existing lecture-NN-notes.md or a whole course unit. Use when the student asks to be quizzed, wants exam practice, or asks to "test me" on a lecture or topic.
+description: Generate a practice quiz (mixed multiple-choice and short-answer/problem questions, with a full answer key) from an existing notes.md or a whole course unit. Use when the student asks to be quizzed, wants exam practice, or asks to "test me" on a lecture or topic.
 license: MIT
 compatibility: opencode
 metadata:
@@ -18,13 +18,13 @@ complete answer key with reasoning.
 
 - On request: "quiz me on lecture 6", "give me a practice exam for the ring
   theory unit", "test me like the midterm would".
-- Draw from `lecture-NN-notes.md` (and the sheet solutions, if a sheet exists
+- Draw from `notes.md` in the lecture folder (and the sheet solutions, if a sheet exists
   for the same topic) rather than re-deriving from the raw PDF.
 
 ## Output location & naming
 
-`level-04/semester-01/<course>/lectures/lecture-NN-quiz.md` for a single lecture, or
-`level-04/semester-01/<course>/unit-quiz-<topic>.md` when asked to cover several lectures.
+`level-04/semester-01/<course>/lectures/lecture-NN/quiz.md` for a single lecture, or
+`level-04/semester-01/<course>/lectures/unit-quiz-<topic>.md` when asked to cover several lectures.
 
 ## Question design
 

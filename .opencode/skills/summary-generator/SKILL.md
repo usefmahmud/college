@@ -1,6 +1,6 @@
 ---
 name: summary-generator
-description: Condense an already-written lecture-NN-notes.md into a one-page, last-minute-review summary or exam cheat-sheet. Use after lecture-notes-writer has produced full notes, or when the student explicitly asks for a shorter version / cheat-sheet / TL;DR of a lecture, sheet, or whole course.
+description: Condense an already-written notes.md into a one-page, last-minute-review summary or exam cheat-sheet. Use after lecture-notes-writer has produced full notes, or when the student explicitly asks for a shorter version / cheat-sheet / TL;DR of a lecture, sheet, or whole course.
 license: MIT
 compatibility: opencode
 metadata:
@@ -24,14 +24,14 @@ anything a student would actually need in the last hour before an exam.
 
 ## Output location & naming
 
-Single lecture: `level-04/semester-01/<course>/lectures/lecture-NN-summary.md`
-Whole-unit/course: `level-04/semester-01/<course>/course-cheatsheet.md` (append a new
+Single lecture: `level-04/semester-01/<course>/lectures/lecture-NN/summary.md`
+Whole-unit/course: `level-04/semester-01/<course>/lectures/course-cheatsheet.md` (append a new
 `## Lecture NN` section each time you're asked to extend it, don't overwrite
 previous lectures' sections).
 
 ## Compression rules
 
-- Start from the **existing** `lecture-NN-notes.md` if it exists — don't
+- Start from the **existing** `notes.md` in the lecture folder if it exists — don't
   re-derive from the raw PDF, that's `lecture-notes-writer`'s job and
   duplicating it wastes the depth already captured.
 - Keep: every definition, every formula, every named theorem/algorithm,
