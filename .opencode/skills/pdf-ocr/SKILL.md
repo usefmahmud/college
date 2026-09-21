@@ -73,11 +73,18 @@ circuit/pipeline diagrams, or graphs:
 - Redraw diagrams as Mermaid (see the `diagram-generator` skill) instead of
   describing a mangled OCR dump of a picture.
 
-**5. Keep the raw extraction as an artifact, not the final output.**
+**5. Use the raw extraction, then clean up.**
 
-Save it as `lecture-NN.raw.txt` next to the PDF so re-runs don't redo OCR, but
-never hand `.raw.txt` to the student as-is — it always gets rewritten into the
-structured notes format from `lecture-notes-writer`.
+Read the `.raw.txt` file to produce structured notes via `lecture-notes-writer`,
+then **delete all temporary artifacts** once the notes file is written:
+
+```bash
+rm -f "level-04/semester-01/<course>/lectures/lecture-NN.raw.txt"
+rm -rf /tmp/ocr/lecture-NN
+```
+
+Never hand `.raw.txt` to the student as-is — it always gets rewritten into the
+structured notes format. The raw file is a working artifact, not a deliverable.
 
 ## Common pitfalls
 
