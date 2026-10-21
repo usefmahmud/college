@@ -7,8 +7,10 @@ generated: 2026-10-21
 
 # Lecture 01 — What is a Group? Binary Operations, the Group Axioms, and the First Theorems
 
-> Companion file: [`proofs-cheat-sheet.md`](proofs-cheat-sheet.md) — every proof in this
-> lecture reduced to a fill-in-the-blank template for exam use.
+> Companion files: [`proofs-cheat-sheet.md`](proofs-cheat-sheet.md) — every proof in this
+> lecture reduced to a fill-in-the-blank template for exam use; and
+> [`../cheatsheet-lec01-02.md`](../cheatsheet-lec01-02.md) — the combined cheat-sheet for
+> Lectures 1–2.
 
 ## TL;DR
 - A **binary operation** on $S$ is a *function* $* : S\times S \to S$. Writing
